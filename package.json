@@ -18,11 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "accordion-js": "^3.4.0",
-<<<<<<< HEAD
-    "accordionjs": "^2.1.2",
-=======
     "swiper": "^11.2.2",
->>>>>>> 00af871872f61d02b98326f9ce7cc15c5c184596
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }
