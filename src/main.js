@@ -1,3 +1,9 @@
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+
+import Swiper from 'swiper';
+import 'swiper/css';
+
 import './js/header.js';
 import './js/hero.js';
 import './js/about-me.js';
