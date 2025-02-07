@@ -1,4 +1,8 @@
 /* Styles for Mobile devices */
+.section {
+  margin-bottom: 64px;
+}
+
 .container {
   min-width: 320px;
   max-width: 375px;
@@ -7,13 +11,26 @@
 }
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
+  .section {
+    margin-bottom: 96px;
+  }
+
   .container {
     max-width: 768px;
+    padding: 0 32px;
   }
 }
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
+@media only screen and (min-width: 1440px) {
+  .section {
+    margin-bottom: 164px;
   }
+
+  .container {
+    max-width: 1440px;
+  }
+}
+
+body {
+  background-color: #1c1d20;
 }
