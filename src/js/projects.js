@@ -1,5 +1,5 @@
 import Swiper from 'swiper/bundle';
-//import 'swiper/css/bundle';
+
 
 const projectImages = [
     {
@@ -42,7 +42,6 @@ function projectGalleryImages(img) {
             <picture class="project-img">
               <source
                   srcset="${image.pct} 1x, ${image.pct2x} 2x"
-                  media="(min-width: 768px)"
               />
               <img src="${image.pct}" alt="Project image" />
             </picture>
@@ -73,7 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         mousewheel: {
             forceToAxis: true,
             sensitivity: 1,
+            invert: false
         },
+    
         touchEventsTarget: 'container',
         simulateTouch: true,
         grabCursor: true,
