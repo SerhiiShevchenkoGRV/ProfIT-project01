@@ -314,7 +314,7 @@ ul.about-description li:last-child {
 
 .container-about-txt-vs-arrow:hover .about-svg-container,
 .container-about-txt-vs-arrow:focus .about-svg-container {
-    border: 1px solid #ed3b44;
+    border: 1px solid #fafafa;
 }
 
 .container-about-txt-vs-arrow:focus .about-arrow {
@@ -322,5 +322,5 @@ ul.about-description li:last-child {
 }
 
 .about-btn-swiper:hover .about-svg-scroll {
-    stroke: #ed3b44;
+    stroke: #fafafa;
 }
