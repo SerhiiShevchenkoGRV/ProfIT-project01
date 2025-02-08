@@ -1,5 +1,8 @@
 import Accordion from 'accordion-js';
 import Swiper from 'swiper';
+import iziToast from 'izitoast';
+import axios from 'axios';
+
 
 import './js/header.js';
 import './js/hero.js';
