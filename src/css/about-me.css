@@ -293,6 +293,10 @@ ul.about-description li:last-child {
         margin-bottom: 96px;
     }
 
+    .js-about-swiper {
+        margin-left: 32px;
+    }
+
     .about-list-scrolls {
         width: 1200px;
     }
