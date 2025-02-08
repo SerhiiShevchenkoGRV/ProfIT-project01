@@ -135,21 +135,31 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 /* Кнопка Burger menu */
+.header-burger-btn {
+  background-color: transparent;
+  border: none;
+}
+
 .burger-icon {
   display: inline-block;
   width: 24px;
   height: 12px;
   stroke-width: 2px;
-  /* stroke: #fafafa; */
-  background-color: inherit;
+  stroke: #fafafa;
+  background-color: transparent;
 
   top: 32px;
   right: 16px;
   cursor: pointer;
   z-index: 40;
   fill: currentColor;
+
+  width: 28px;
+  height: 28px;
 }
+
 .icon-Icon {
   width: 2em;
 }
