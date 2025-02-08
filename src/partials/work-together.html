@@ -1,75 +1,57 @@
-<footer id="footer" class="container footer">
-  <div class="container footer-container">
-    <img
-      src="./img/logo/jefferson-logo.jpg"
-      alt="Profile Picture"
-      width="44"
-      height="44"
-      class="profile-pic"
+<footer class="footer">
+<div>
+    <div class="footer-container">
+      <img
+        class="logo-pic"
+        src="./img/logo/jefferson-logo.jpg"
+        alt="Logo Picture"
+      />
+      <h2 class="footer-text">
+        LET'S <span class="footer-span-text">WORK</span>
+      </h2>
+    </div>
+    <h2 class="footer-text footer-text-together">TOGETHER</h2>
+  </div>
+  <form class="footer-form-contact">
+    <input
+      class="footer-input footer-input-mail"
+      id="footer-input-email"
+      type="email"
+      placeholder="clients@gmail.com"
+      required
+      pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+      autocomplete="off"
     />
-    <h2 class="footer-text">
-      LET'S <span class="footer-span-text">WORK</span>
-    </h2>
-    <h2 class="footer-text">TOGETHER</h2>
-  </div>
-  <div class="footer-form-container">
-    <form class="footer-form-contact">
-      <div class="footer-form-input">
-        <label class="label-footer" for="email-footer">
-          <input
-            class="footer-input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="clients@gmail.com"
-            required
-            pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        /></label>
-        <label class="label-footer" for="footer-comments">
-          <input
-            class="footer-input"
-            type="text"
-            id="comments"
-            name="comments"
-            placeholder="comments"
-          />
-        </label>
-        <button class="footer-send-btn" type="submit">Send</button>
-      </div>
-    </form>
-  </div>
+    <input
+      class="footer-input footer-input-comment"
+      id="footer-input-comments"
+      type="text"
+      placeholder="comments"
+      maxlength="100"
+      autocomplete="off"
+    />
+    <button class="footer-send-btn" type="submit">Send</button>
+  </form>
   <div class="footer-link">
     <a
-      class="link-for-footer"
-      type="email"
-      href="lloydjefferson@gmail.com"
+      class="link-for-footer link-for-footer-email"
+      href="mailto:lloydjefferson@gmail.com"
       target="_blank"
       >lloydjefferson@gmail.com</a
     >
     <a
-      class="link-for-footer"
-      type="tel"
-      href="+380 11 111 11 11"
+      class="link-for-footer link-for-footer-tel"
+      href="tel:+3801111111111"
       target="_blank"
-      >+380 11 111 11 11</a
+      >+380 11 1111 11 11</a
     >
   </div>
-</footer>
-<div class="backdrop">
-  <div class="modal-window visibility-hidden">
-    <div class="modal">
-      <button class="modal-btn" type="button">
-        <svg class="modal-btn-icon" width="32" height="32">
-          <use href="./img/sprite.svg#icon-close-X"></use>
-        </svg>
-      </button>
+  <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="successModal">
+      <div class="modal-content" id="responseModal">
+        <span class="close-button" id="closeModal">&times;</span>
+        <p id="modalMessage"></p>
+      </div>
     </div>
-    <h3 class="modal-window-text">
-      Thank you for your interest in cooperation!
-    </h3>
-    <p class="modal-window-title">
-      The manager will contact you shortly to discuss further details and
-      opportunities for cooperation. Please stay in touch.
-    </p>
-  </div>
-</div>
+  </footer>
+  </footer>
