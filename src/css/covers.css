@@ -13,7 +13,7 @@
   overflow: hidden;
   margin-bottom: 64px;
 
-  background-image: url(./img/Covers/background/background_bubbles_1x.webp);
+  background-image: url(../img/covers/background/background_bubbles_1x.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -21,7 +21,7 @@
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .covers-cont {
-    background-image: url(./img/Covers/background/background_bubbles_2x.webp);
+    background-image: url(../img/covers/background/background_bubbles_2x.webp);
   }
 }
 
