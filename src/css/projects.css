@@ -56,7 +56,9 @@
 }
 
 .project-button {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 60px;
     padding: 13px 32px;
     height: 45px;
