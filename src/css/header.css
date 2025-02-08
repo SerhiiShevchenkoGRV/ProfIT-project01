@@ -3,6 +3,7 @@
   max-width: 343px;
   margin: 0 auto;
   padding: 0 16px; */
+  position: relative;
 }
 
 .header-nav-list {
@@ -141,6 +142,9 @@
 .header-burger-btn {
   background-color: transparent;
   border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .burger-icon {
@@ -180,6 +184,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 /* Лого */
 .header-logo {
   display: flex;
