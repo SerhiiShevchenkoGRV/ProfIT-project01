@@ -130,7 +130,7 @@
 @media only screen and (min-width: 1440px) {
   .hero-section {
     background-image: url(../img/hero/hero-bg_desk@1x.jpg);
-    /* background-repeat: no-repeat; */
+
     padding: 300px 0 32px 178px;
     margin-bottom: 96px;
   }
