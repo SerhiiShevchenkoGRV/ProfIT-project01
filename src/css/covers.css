@@ -1,0 +1,49 @@
+.covers-section {
+  /* margin: 0 auto; */
+  /* max-width: 1440px; */
+  display: flex;
+  justify-content: center;
+  /* background-color: #1c1d20; */
+}
+
+.covers-cont {
+  position: relative;
+  width: 375px;
+  height: 508px;
+  overflow: hidden;
+  margin-bottom: 64px;
+
+  background-image: url(../img/covers/background/background_bubbles_1x.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .covers-cont {
+    background-image: url(../img/covers/background/background_bubbles_2x.webp);
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .covers-cont {
+    width: 375px;
+    height: 508px;
+    margin-bottom: 96px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .covers-cont {
+    width: 768px;
+    height: 960px;
+    margin-bottom: 164px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .covers-cont {
+    width: 1440px;
+    height: 960px;
+  }
+}
