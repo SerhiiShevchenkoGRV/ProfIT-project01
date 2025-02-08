@@ -1,21 +1,25 @@
-.hero {
+.hero-section {
   background-image: url(../img/hero/hero-bg-mobile-1x.jpg);
   background-repeat: no-repeat;
-  padding: 281px 0 32px 0;
-  margin-bottom: 64px;
+  background-size: cover;
+  background-position: center;
+  padding-top: 281px;
+  padding-bottom: 32px;
+}
+
+.hero-cont {
+  min-width: 320px;
+  padding: 0 16px;
 }
 
 @media screen and (min-resolution: 192dpi),
   screen and (min-resolution: 2dppx),
   screen and (min-device-pixel-ratio: 2) {
   .hero {
-    background-size: contain;
-    background-image: url(../img/hero/menu-background@2x.png);
+    background-image: url(../img/hero/hero-bg-mobile-2x.jpg);
   }
 }
-.hero-cont {
-  padding-bottom: 0;
-}
+
 .hero-title {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
@@ -27,8 +31,8 @@
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   max-width: 343px;
   margin-bottom: 212px;
-  /* margin: 0 16px 212px 0; */
 }
+
 .hero-list {
   display: flex;
   align-items: flex-start;
@@ -38,8 +42,6 @@
 }
 
 .hero-item {
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
   color: #fafafa;
@@ -88,7 +90,6 @@
 @media only screen and (min-width: 768px) {
   .hero {
     background-image: url(../img/hero/hero-bg-tablet-1x.jpg);
-    background-repeat: no-repeat;
     padding-top: 300px;
   }
 
@@ -96,20 +97,14 @@
     screen and (min-resolution: 2dppx),
     screen and (min-device-pixel-ratio: 2) {
     .hero {
-      background-size: contain;
       background-image: url(../img/hero/hero-bg-tablet-2x.jpg);
-      margin-bottom: 96px;
     }
   }
   .hero-title {
     font-size: 90px;
     line-height: 1;
     letter-spacing: -0.03em;
-    text-transform: uppercase;
     color: #fafafa;
-    font-size: 90px;
-    max-width: 632px;
-    margin-bottom: 187px;
   }
 
   .hero-list {
@@ -131,11 +126,12 @@
     height: 55px;
   }
 }
+/* ------------desktop--------- */
 @media only screen and (min-width: 1440px) {
   .hero {
     background-image: url(../img/hero/hero-bg-desktop-1x.jpg);
-    background-repeat: no-repeat;
-    /* padding: 300px 0 32px 178px; */
+    /* background-repeat: no-repeat; */
+    padding: 300px 0 32px 178px;
     margin-bottom: 96px;
   }
 
@@ -151,5 +147,7 @@
   .hero-title {
     margin-bottom: 243px;
     max-width: 1084px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
