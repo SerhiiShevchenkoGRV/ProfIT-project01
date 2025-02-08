@@ -28,7 +28,7 @@ html {
   font-size: 16px;
   letter-spacing: -0.02em;
   text-decoration: none;
-  color: #333; /* Цвет текста color: #fafafa; */
+  color: #fafafa; /* Цвет текста color: #fafafa; */
 }
 
 @media screen and (min-width: 768px) {
@@ -65,7 +65,7 @@ html {
     letter-spacing: -0.02em;
     padding: 10px 15px;
     text-underline-offset: 3px;
-    color: #333; /* Цвет текста color: #fafafa; */
+    color: #fafafa; /* Цвет текста color: #fafafa; */
     position: relative;
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -91,7 +91,7 @@ html {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: #333;
+    color: #fafafa; /* Цвет текста color: #fafafa; */
     text-align: center;
     white-space: nowrap;
   }
@@ -145,7 +145,8 @@ html {
   width: 24px;
   height: 12px;
   stroke-width: 2px;
-  stroke: #fafafa;
+  /* stroke: #fafafa; */
+  background-color: inherit;
 
   top: 32px;
   right: 16px;
