@@ -1,57 +1,60 @@
 <footer class="footer">
-<div>
-    <div class="footer-container">
+  <div class="footer-container">
+    <div class="footer-head-container">
       <img
         class="logo-pic"
         src="./img/logo/jefferson-logo.jpg"
         alt="Logo Picture"
       />
       <h2 class="footer-text">
-        LET'S <span class="footer-span-text">WORK</span>
+        LET'S <span class="footer-span-text">WORK</span> TOGETHER
       </h2>
     </div>
-    <h2 class="footer-text footer-text-together">TOGETHER</h2>
+    <!-- <h2 class="footer-text footer-text-together">TOGETHER</h2> -->
+    <form class="footer-form-contact">
+      <div class="form-inputs">
+        <input
+          class="footer-input footer-input-mail"
+          id="footer-input-email"
+          type="email"
+          placeholder="clients@gmail.com"
+          required
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          autocomplete="off"
+        />
+        <input
+          class="footer-input footer-input-comment"
+          id="footer-input-comments"
+          type="text"
+          placeholder="comments"
+          maxlength="100"
+          autocomplete="off"
+        />
+      </div>
+      <button class="footer-send-btn" type="submit">Send</button>
+    </form>
+    <div class="footer-link">
+      <a
+        class="link-for-footer"
+        href="mailto:lloydjefferson@gmail.com"
+        target="_blank"
+        >lloydjefferson@gmail.com</a
+      >
+      <a
+        class="link-for-footer link-for-footer-tel"
+        href="tel:+3801111111111"
+        target="_blank"
+        >+380 11 1111 11 11</a
+      >
+    </div>
   </div>
-  <form class="footer-form-contact">
-    <input
-      class="footer-input footer-input-mail"
-      id="footer-input-email"
-      type="email"
-      placeholder="clients@gmail.com"
-      required
-      pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-      autocomplete="off"
-    />
-    <input
-      class="footer-input footer-input-comment"
-      id="footer-input-comments"
-      type="text"
-      placeholder="comments"
-      maxlength="100"
-      autocomplete="off"
-    />
-    <button class="footer-send-btn" type="submit">Send</button>
-  </form>
-  <div class="footer-link">
-    <a
-      class="link-for-footer link-for-footer-email"
-      href="mailto:lloydjefferson@gmail.com"
-      target="_blank"
-      >lloydjefferson@gmail.com</a
-    >
-    <a
-      class="link-for-footer link-for-footer-tel"
-      href="tel:+3801111111111"
-      target="_blank"
-      >+380 11 1111 11 11</a
-    >
-  </div>
-  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="successModal">
       <div class="modal-content" id="responseModal">
         <span class="close-button" id="closeModal">&times;</span>
         <p id="modalMessage"></p>
       </div>
     </div>
-  </footer>
-  </footer>
+  </div>
+</footer>
