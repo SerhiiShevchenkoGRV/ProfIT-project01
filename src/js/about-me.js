@@ -13,7 +13,7 @@ new Accordion('.js-about-descriprion', {
 
 const aboutSwiper = new Swiper('.js-about-swiper', {
   modules: [Navigation, Keyboard],
-  // speed: 400,
+  speed: 400,
   loop: true,
   slidesPerView: 2,
   breakpoints: {
