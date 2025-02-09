@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .header-cont {
   /* min-width: 320px;
   max-width: 343px; */
@@ -63,13 +67,13 @@
   .header-nav-item {
     font: 500 16px 'Inter Tight', sans-serif;
     letter-spacing: -0.02em;
-    padding: 10px 15px;
     text-underline-offset: 3px;
     color: #fafafa; /* Цвет текста color: #fafafa; */
     position: relative;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     margin-bottom: -15px;
+    top: -20px;
   }
 
   /* Стили для выпадающего меню */
@@ -107,6 +111,7 @@
     padding: 14px 31px;
     width: 163px;
     height: 55px;
+    margin-top: -22px;
     background: #ed3b44;
     font-family: 'Inter Tight', sans-serif;
     font-weight: 600;
@@ -217,7 +222,6 @@
   stroke: #fafafa;
   background-color: transparent;
   fill: transparent;
-
   cursor: pointer;
   z-index: 100;
 }
