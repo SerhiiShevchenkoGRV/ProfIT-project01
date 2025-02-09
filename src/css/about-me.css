@@ -1,48 +1,26 @@
 /* Accardeon */
 
-.acord-about-tr {
-    padding: 0;
-    cursor: pointer;
-}
-
 .js-about-accordeon {
     overflow: hidden;
-}
-
-ul li.acord-about-el.list-about-description {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.2);
-    max-width: 1376px;
 }
 
 .acord-about-el.is-active .about-arrow {
     transform: rotate(-180deg);
 }
 
-li.list-about-description {
-    padding-bottom: 32px !important;
-}
-
-li.is-active {
-    padding-bottom: 20px !important;
-}
-
 .container-about-txt-vs-arrow {
-    padding: 0 !important;
+    padding-top: 20px;
+    padding-bottom: 32px;
     display: flex;
-
+    cursor: pointer;
 }
 
-li.is-active .about-accordeon {
-    margin-top: 12px;
+.is-active .container-about-txt-vs-arrow {
+    padding-bottom: 12px;
 }
 
-ul .about-ul-text {
-    padding: 0 !important;
+.is-active {
+    padding-bottom: 20px;
 }
 
 /* Style about-me */
@@ -79,22 +57,12 @@ ul .about-ul-text {
     ;
 }
 
-.container-about-me {
-    margin-bottom: 32px;
-}
-
 .container-about-description {
     margin-bottom: 32px;
 }
 
 .list-about-description {
     position: relative;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-ul.about-description li:last-child {
-    margin-bottom: 0 !important;
 }
 
 .list-about-description::after {
@@ -213,7 +181,7 @@ ul.about-description li:last-child {
 @media screen and (min-width: 768px) {
 
     .container-about-me {
-        margin-bottom: 64px;
+        margin-bottom: 32px;
     }
 
     .container-about-txt {
@@ -228,9 +196,16 @@ ul.about-description li:last-child {
         line-height: 1.05263;
     }
 
-    li.list-about-description {
-        padding-bottom: 32px !important;
-        margin-bottom: 32px !important;
+    .container-about-txt-vs-arrow {
+        padding-top: 32px;
+    }
+
+    .is-active .container-about-txt-vs-arrow {
+        padding-bottom: 8px;
+    }
+
+    .is-active {
+        padding-bottom: 32px;
     }
 
     .container-about-description {
@@ -271,7 +246,7 @@ ul.about-description li:last-child {
 
     .container-about-me {
         display: flex;
-        margin-bottom: 96px;
+        margin-bottom: 64px;
     }
 
     .container-about-txt {
