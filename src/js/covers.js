@@ -83,21 +83,6 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-const covers = coversArr
-  .map(
-    ({ src1x, src2x, alt }) =>
-      `<img
-              srcset="
-                ${src1x},
-                ${src2x} 2x
-              "
-              src=${src1x}
-              alt="${alt}"
-              class="covers-picture"
-            />`
-  )
-  .join('');
-
 picturesLines.forEach(li => {
   const shuffledCovers = shuffleArray(coversArr)
     .map(
@@ -114,4 +99,21 @@ picturesLines.forEach(li => {
   li.innerHTML = shuffledCovers;
 });
 
-function coversGalleryRender(array) {}
+// picturesLines.forEach(li => {
+//   const covers = coversArr
+//     .map(
+//       ({ src1x, src2x, alt }) =>
+//         `<img
+//               srcset="
+//                 ${src1x},
+//                 ${src2x} 2x
+//               "
+//               src=${src1x}
+//               alt="${alt}"
+//               class="covers-picture"
+//             />`
+//     )
+//     .join('');
+
+//   li.innerHTML = covers;
+// });

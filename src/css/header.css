@@ -1,8 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .header-cont {
   /* min-width: 320px;
-  max-width: 343px;
+  max-width: 343px; */
   margin: 0 auto;
-  padding: 0 16px; */
+  padding: 0 16px;
   position: relative;
 }
 
@@ -15,7 +19,7 @@
 .header {
   position: absolute;
   top: 32px;
-  left: 0;
+  left: 16px;
   right: 0;
   background: transparent;
   z-index: 10;
@@ -63,13 +67,13 @@
   .header-nav-item {
     font: 500 16px 'Inter Tight', sans-serif;
     letter-spacing: -0.02em;
-    padding: 10px 15px;
     text-underline-offset: 3px;
     color: #fafafa; /* Цвет текста color: #fafafa; */
     position: relative;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     margin-bottom: -15px;
+    top: -20px;
   }
 
   /* Стили для выпадающего меню */
@@ -107,6 +111,7 @@
     padding: 14px 31px;
     width: 163px;
     height: 55px;
+    margin-top: -22px;
     background: #ed3b44;
     font-family: 'Inter Tight', sans-serif;
     font-weight: 600;
@@ -146,7 +151,7 @@
 /* Header */
 .header {
   position: absolute;
-  top: 20px;
+  top: 32px;
   left: 0;
   right: 0;
   background: transparent;
@@ -186,7 +191,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  max-width: 375px;
+  /* max-width: 375px; */
   width: 100%;
   height: 100%;
   z-index: 30;
@@ -198,6 +203,9 @@
 }
 /* Кнопка Burger menu */
 .header-burger-btn {
+  position: absolute;
+  top: 0;
+  right: 16px;
   width: 28px;
   height: 28px;
   background: none;
@@ -205,6 +213,7 @@
   padding: 0;
   margin: 0;
   cursor: pointer;
+  overflow: hidden;
 }
 .burger-icon {
   width: 100%;
@@ -213,7 +222,6 @@
   stroke: #fafafa;
   background-color: transparent;
   fill: transparent;
-
   cursor: pointer;
   z-index: 100;
 }
@@ -224,8 +232,8 @@
 
 .modal-close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 32px;
+  right: 16px;
   align-self: flex-end;
   background: none;
   border: none;
