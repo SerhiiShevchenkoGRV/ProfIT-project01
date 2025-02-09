@@ -1,19 +1,27 @@
+import firstImage1 from '../img/projects/project-1.jpg';
+import firstImage2 from '../img/projects/project-2.jpg';
+import firstImage3 from '../img/projects/project-3.jpg';
+import secondImage1 from '../img/projects/project-1@2x.jpg';
+import secondImage2 from '../img/projects/project-2@2x.jpg';
+import secondImage3 from '../img/projects/project-3@2x.jpg'
 import Swiper from 'swiper/bundle';
 
 const projectImages = [
-  {
-    pct: '../img/projects/project-1.jpg',
-    pct2x: '../img/projects/project-1@2x.jpg',
-  },
-  {
-    pct: '../img/projects/project-2.jpg',
-    pct2x: '../img/projects/project-2@2x.jpg',
-  },
-  {
-    pct: '../img/projects/project-3.jpg',
-    pct2x: '../img/projects/project-3@2x.jpg',
-  },
-];
+    {
+        pct: firstImage1,
+        pct2x: secondImage1,
+    },
+     {
+        pct: firstImage2,
+        pct2x: secondImage2,
+    },
+      {
+        pct:firstImage3,
+        pct2x: secondImage3,
+    }
+]
+
+
 
 const projectCards = document.querySelector('.projects-list');
 const prevButton = document.querySelector('.swiper-button-prev');
@@ -80,9 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   swiper.on('slideChange', function () {
-    console.log('Текущий индекс слайда:', swiper.activeIndex);
-    console.log('isBeginning:', swiper.isBeginning);
-    console.log('isEnd:', swiper.isEnd);
     prevButton.classList.toggle('custom-disabled', swiper.isBeginning);
     nextButton.classList.toggle('custom-disabled', swiper.isEnd);
   });

@@ -38,6 +38,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
+  padding-right: 16px;
   gap: 4px;
 }
 
@@ -101,6 +102,7 @@
     }
   }
   .hero-title {
+    max-width: 632px;
     font-size: 90px;
     line-height: 1;
     letter-spacing: -0.03em;
@@ -131,8 +133,13 @@
   .hero-section {
     background-image: url(../img/hero/hero-bg_desk@1x.jpg);
 
-    padding: 300px 0 32px 178px;
-    margin-bottom: 96px;
+    padding-top: 300px 178px 243px;
+  }
+  .hero-title {
+    margin-bottom: 243px;
+    max-width: 1084px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media screen and (min-resolution: 192dpi),
@@ -142,12 +149,5 @@
       background-size: contain;
       background-image: url(../img/hero/hero-bg_desk@2x.jpg);
     }
-  }
-
-  .hero-title {
-    margin-bottom: 243px;
-    max-width: 1084px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
