@@ -2,16 +2,16 @@ import Swiper from 'swiper/bundle';
 
 const projectImages = [
   {
-    pct: './img/projects/project-1.jpg',
-    pct2x: './img/projects/project-1@2x.jpg',
+    pct: '../img/projects/project-1.jpg',
+    pct2x: '../img/projects/project-1@2x.jpg',
   },
   {
-    pct: './img/projects/project-2.jpg',
-    pct2x: './img/projects/project-2@2x.jpg',
+    pct: '../img/projects/project-2.jpg',
+    pct2x: '../img/projects/project-2@2x.jpg',
   },
   {
-    pct: './img/projects/project-3.jpg',
-    pct2x: './img/projects/project-3@2x.jpg',
+    pct: '../img/projects/project-3.jpg',
+    pct2x: '../img/projects/project-3@2x.jpg',
   },
 ];
 
