@@ -11,16 +11,16 @@ async function reviewApi() {
 function createRewiew(response) {
     const { author, avatar_url, review } = response;
 
-    return `<li class="swiper-slide swiper-slide-reviews">
+    return `<li class="swiper-slide">
         <img src="${avatar_url}" alt="Avatar" class="avatar" />
         <h3 class="name-autor">${author}</h3>
         <p class="review-text">${review}</p>
     </li>`;
 }
 
-const swiperWrapper = document.querySelector(".review-list");
+const swiperWrapper = document.querySelector(".swiper-wrapper-rev");
 const reviewsSection = document.querySelector(".reviews");
-const elementsField = document.querySelector(".swiper-field");
+const elementsField = document.querySelector(".swiper");
 
 let swiper;
 let errorOccurred = false;
@@ -33,13 +33,14 @@ async function addReview() {
         const stringData = responseReview.data.map(el => createRewiew(el)).join("");
         swiperWrapper.innerHTML = stringData;
 
-        swiper = new Swiper('.swiper-field', {
+        swiper = new Swiper('.swiper-rev', {
             slidesPerView: 1,
             modules: [Navigation, Keyboard, Mousewheel],
             navigation: {
-                nextEl: '.swiper-reviews-next',
-                prevEl: '.swiper-reviews-prev',
+                nextEl: '.reviews-button-next',
+                prevEl: '.reviews-button-prev',
             },
+            wrapperClass: 'swiper-wrapper-rev',
             speed: 500,
             keyboard: {
                 enabled: true,
@@ -50,7 +51,7 @@ async function addReview() {
             },
             spaceBetween: 16,
             breakpoints: {
-                320: { slidesPerView: 1 },
+                320: { slidesPerView: 1, spaceBetween: 16 },
                 768: { slidesPerView: 2, spaceBetween: 16 },
                 1440: { slidesPerView: 4, spaceBetween: 16 },
             },
@@ -73,8 +74,8 @@ async function addReview() {
 }
 
 function updateNavigationButtons(swiper) {
-    const nextButton = document.querySelector('.swiper-reviews-next');
-    const prevButton = document.querySelector('.swiper-reviews-prev');
+    const nextButton = document.querySelector('.reviews-button-next');
+    const prevButton = document.querySelector('.reviews-button-prev');
 
     if (swiper.isEnd) {
         nextButton.setAttribute("disabled", "true");
@@ -114,3 +115,4 @@ function observeReviewsSection() {
 
     observer.observe(reviewsSection);
 }
+
