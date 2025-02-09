@@ -4,10 +4,18 @@ import { Navigation, Keyboard } from 'swiper/modules';
 import Swiper from 'swiper';
 
 
-new Accordion('.js-about-descriprion', {
+const acordeonAbout = new Accordion('.js-about-descriprion', {
   duration: 500,
   showMultiple: false,
   openOnInit: [0],
+  elementClass: 'acord-about-el',
+  triggerClass: 'acord-about-tr',
+  panelClass: 'js-about-accordeon',
+  
+});
+
+document.querySelector('.acord-about-el').addEventListener('click', e => {
+  acordeonAbout
 });
 
 
