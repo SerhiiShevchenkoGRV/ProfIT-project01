@@ -1,78 +1,39 @@
-const BASE_URL = "https://https://portfolio-js.b.goit.study/api-docs/api";
-const REQUEST_URL = "https://portfolio-js.b.goit.study/api-docs/api/requests";
-const form = document.querySelector('.form-subscribe');
-const closeBtn = document.querySelector('.close-button');
-const modal = document.querySelector('.model_overlay');
-const modalInfo = document.querySelector('.info_item');
-const messageInfo = form.querySelector('.mail_js')
+const form = document.getElementById('cooperationForm');
+        const modal = document.getElementById('modal');
+        const closeBtn = document.querySelector('.modal-btn');
 
-/*messageInfo.insertAdjacentHTML('afterend', '<p class="state_massage">Succes!</p>');*/
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
 
-function fetchData(url = BASE_URL, options = {}) {
-    return fetch(url, options)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(response.statusText);
+            try {
+                const response = await fetch('https://portfolio-js.b.goit.study/api-docs', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    modal.style.display = 'flex';
+                } else {
+                    alert('Error submitting form. Please check your input and try again.');
+                }
+            } catch (error) {
+                alert('Network error. Please try again later.');
             }
-            return response.json();
-    })
-};
+        });
 
-form.addEventListener("submit", postRequest);
-function postRequest(event) {
-    event.preventDefault()
-    const mail = event.target.elements.email.value;
-    const comments = event.target.elements.comment.value;
-    fetch(REQUEST_URL, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email: mail,  comment: comments}),
-    
-})
-.then(response => {
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            return response.json();
-})
-.then(data => arr(data))
-.then(log => modalInfo.insertAdjacentHTML("beforeend", createMarkup(log)))
-.catch(error => console.log(error.message))
-} 
+        function closeModal() {
+            modal.style.display = 'none';
+        }
 
-function arr(data) {
-    const i = [data]; 
-    return i;
-}
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) closeModal();
+        });
 
-function createMarkup(arr) {
-    modal.classList.remove("visibility-hidden");
-    return arr.map(({ title, message }) => `
-        <div class="text_info">
-        <p>${title}</p>
-        </div>
-        <div class="supporting_text">
-        <p>${message}</p>
-        </div>
-    `).join("");
-}
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeModal();
+        });
 
-/*close event */
-closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', closeModal);
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Escape') {
-        return closeModal();
-    }
-});
-function closeModal(event) {
-    modal.classList.add("visibility-hidden");
-    modalInfo.innerHTML = "";
-    form.reset();
-    
-}
-function Sus() {
-    return messageInfo.insertAdjacentHTML('afterend', '<p class="state_massage">Succes!</p>');
-}
