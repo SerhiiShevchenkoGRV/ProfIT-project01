@@ -101,7 +101,6 @@
 }
 .project-button-prev,
 .project-button-next{
-    cursor: none;
     display: flex;
     align-items: center;
     justify-content: center;
