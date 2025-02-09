@@ -87,6 +87,9 @@ left: 0;
   letter-spacing: -0.02em;
   padding-bottom: 20px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer-input:hover {
@@ -169,66 +172,31 @@ left: 0;
 .modal {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #1c1d20;
-  z-index: 1000;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px solid #fafafa1a;
-  padding: 64px 32px;
-  width: 363px;
-}
-
-.modal-content {
-  position: relative;
-}
-
-.close-button {
-  position: absolute;
-  cursor: pointer;
-  top: -45px;
-  right: 0;
-  font-size: 22px;
-}
-
-.modal.active {
-  display: block;
-}
-
-.thank-you-text {
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: #fafafa;
-  display: block;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-}
-
-.thank-you-text--two {
-  color: #fafafa99;
-  letter-spacing: -0.02em;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-.modal-overlay {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(28, 29, 32, 0.5);
-  z-index: 999;
-  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
 }
 
-.modal-overlay.active {
-  display: block;
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 300px;
+  text-align: center;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1px) and (max-width: 328px) {
@@ -320,78 +288,4 @@ left: 0;
       background-image: url(../img/work-together/glass_effect_desktop_x2.png);
     }
   }
-}
-.modal {
-    display: inline-flex;
-    width: 343px;
-    height: 276px; 
-    border-radius: 20px;
-    background: #1C1D20;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    padding: 64px 32px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 1px 3px rgba(0, 0, 0, 0.12),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-content {
-  border-radius: 5px;
-  position: relative;
-  max-width: 300px;
-  text-align: center;
-}
-
-.modal-btn {
-    /*position: absolute;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    top: 24px;
-    right: 24px;
-    background-color: #e7e9fc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0;*/
-
-  position: absolute;
-  top: 32px;
-    right: 16px;
-    align-self: flex-end;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-    width: 32px;
-    height: 32px;
-
-}
-
-.modal-btn:hover, .modal-btn:focus {
-    background-color: #404bbf;
-    border: none;
-}
-
-.modal-btn-icon {
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-btn:hover .modal-btn-icon {
-    fill: #ffffff;
-}
-.modal-btn:focus .modal-btn-icon {
-    fill: #ffffff;
-}
-
-.modal-btn-icon {
-  stroke: #fbfbfb;
-  fill: #fbfbfb;
 }
