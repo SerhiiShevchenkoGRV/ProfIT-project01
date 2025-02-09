@@ -183,10 +183,17 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../img/hero/hero-bg_mob@1x.jpg');
+  background-image: url('../img/header/header-bg_mob_menu@1x.jpg');
   display: none;
   z-index: 20;
 }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mobile-menu {
+    background-image: url('../img/header/heared-bg_mob_menu@2x.jpg');
+  }
+}
+
 .mobile-menu-container {
   position: fixed;
   top: 0;
