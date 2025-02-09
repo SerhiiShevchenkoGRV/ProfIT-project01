@@ -3,14 +3,14 @@
   /* max-width: 1440px; */
   display: flex;
   justify-content: center;
-  /* background-color: #1c1d20; */
+  position: relative;
 }
 
 .covers-cont {
-  position: relative;
+  position: absolute;
   width: 375px;
   height: 508px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 64px;
 
   background-image: url(../img/covers/background/background_bubbles_1x.webp);
@@ -42,8 +42,28 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .covers-section {
+  }
+
   .covers-cont {
     width: 1440px;
     height: 960px;
+  }
+
+  .covers-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .covers-line {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .covers-picture {
+    width: 544px;
+    height: 314px;
   }
 }
