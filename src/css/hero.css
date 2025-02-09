@@ -7,12 +7,12 @@
   padding-bottom: 32px;
 }
 
-.hero-cont {
+.hero-container {
   min-width: 320px;
   padding: 0 16px;
 }
 
-@media screen and (min-resolution: 192dpi),
+@media only screen and (min-width: 320px) and (min-resolution: 192dpi),
   screen and (min-resolution: 2dppx),
   screen and (min-device-pixel-ratio: 2) {
   .hero-section {
@@ -133,7 +133,7 @@
   .hero-section {
     background-image: url(../img/hero/hero-bg_desk@1x.jpg);
 
-    padding-top: 300px 178px 243px;
+    padding-top: 300px 178px 243px 178px;
   }
   .hero-title {
     margin-bottom: 243px;
@@ -146,7 +146,7 @@
     screen and (min-resolution: 2dppx),
     screen and (min-device-pixel-ratio: 2) {
     .hero-section {
-      background-size: contain;
+      background-size: cover;
       background-image: url(../img/hero/hero-bg_desk@2x.jpg);
     }
   }
