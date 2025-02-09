@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.covers-section > .container {
+  padding: 0;
+}
+
 .covers-cont {
   max-height: 508px;
   position: relative;
