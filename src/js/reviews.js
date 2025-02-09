@@ -62,7 +62,8 @@ async function addReview() {
                 slideChange: function () {
                     updateNavigationButtons(this);
                 }
-            }
+            },
+
         });
         updateNavigationButtons(swiper);
     } catch (error) {

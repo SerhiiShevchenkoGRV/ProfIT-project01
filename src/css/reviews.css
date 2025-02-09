@@ -105,7 +105,7 @@
   overflow: hidden;
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1440px) {
   .swiper-slide-rev {
     max-width: 332px;
   }
