@@ -1,13 +1,15 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
-document.addEventListener('DOMContentLoaded', function () {
-  const accordion = new Accordion('.faq', {
+  const accordion = new Accordion('.js-faq', {
     duration: 400,
     showMultiple: false,
-    elementClass: 'faq-item',
-    triggerClass: 'faq-btn',
+    elementClass: 'js-faq-el',
+    triggerClass: 'js-faq-tr',
     panelClass: 'faq-content',
     activeClass: 'is-open',
   });
+
+document.querySelector('.faq-item').addEventListener('click', e => {
+  accordion
 });
