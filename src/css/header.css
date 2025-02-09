@@ -6,7 +6,6 @@ html {
   /* min-width: 320px;
   max-width: 343px; */
   margin: 0 auto;
-  padding: 0 16px;
   position: relative;
 }
 
@@ -36,7 +35,8 @@ html {
 @media screen and (min-width: 768px) {
   .header-cont {
     max-width: 768px;
-    padding: 0 32px;
+    padding-right: 32px;
+    padding-left: 16px;
   }
 
   .header-burger-btn {
@@ -128,7 +128,6 @@ html {
 @media screen and (min-width: 1440px) {
   .header-cont {
     max-width: 1440px;
-    /* padding: 0 100px; */
   }
   .header-burger-btn {
     display: none;
