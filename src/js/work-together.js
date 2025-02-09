@@ -1,70 +1,78 @@
-import axios from 'axios';
+const BASE_URL = "https://https://portfolio-js.b.goit.study/api-docs/api";
+const REQUEST_URL = "https://portfolio-js.b.goit.study/api-docs/api/requests";
+const form = document.querySelector('.form-subscribe');
+const closeBtn = document.querySelector('.close-button');
+const modal = document.querySelector('.model_overlay');
+const modalInfo = document.querySelector('.info_item');
+const messageInfo = form.querySelector('.mail_js')
 
-const form = document.getElementById('footer-form-contact');
-const modal = document.getElementById('successModal');
-const modalOverlay = document.getElementById('modalOverlay');
-const modalMessage = document.getElementById('modalMessage');
-const closeModal = document.getElementById('closeModal');
+/*messageInfo.insertAdjacentHTML('afterend', '<p class="state_massage">Succes!</p>');*/
 
-function closeModalWindow() {
-  modal.classList.remove('active'); 
-  modalOverlay.classList.remove('active');
+function fetchData(url = BASE_URL, options = {}) {
+    return fetch(url, options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+    })
+};
+
+form.addEventListener("submit", postRequest);
+function postRequest(event) {
+    event.preventDefault()
+    const mail = event.target.elements.email.value;
+    const comments = event.target.elements.comment.value;
+    fetch(REQUEST_URL, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email: mail,  comment: comments}),
+    
+})
+.then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+})
+.then(data => arr(data))
+.then(log => modalInfo.insertAdjacentHTML("beforeend", createMarkup(log)))
+.catch(error => console.log(error.message))
+} 
+
+function arr(data) {
+    const i = [data]; 
+    return i;
 }
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault(); 
+function createMarkup(arr) {
+    modal.classList.remove("visibility-hidden");
+    return arr.map(({ title, message }) => `
+        <div class="text_info">
+        <p>${title}</p>
+        </div>
+        <div class="supporting_text">
+        <p>${message}</p>
+        </div>
+    `).join("");
+}
 
-  const emailInput = document.getElementById('footer-input-email');
-  const commentsInput = document.getElementById('footer-input-comments');
-  const data = {
-    email: emailInput.value.trim(),
-    comment: commentsInput.value.trim(),
-  };
-
-  if (!data.email || !data.comment) {
-    modalMessage.textContent = 'Please fill out all required fields.';
-    modal.classList.add('active');
-    modalOverlay.classList.add('active');
-    return; 
-  }
-
-  try {
-    const response = await axios.post('https://portfolio-js.b.goit.study/api/requests', data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    const responseData = response.data;
-    modalMessage.innerHTML = `
-      <span class="thank-you-text">${responseData.title}</span><br>
-      <span class="thank-you-text--two">${responseData.message}</span>
-    `;
-    modal.classList.add('active');
-    modalOverlay.classList.add('active');
-    form.reset();
-  } catch (error) {
-    let errorMessage = 'An error occurred while sending data. Try again.';
-    if (error.response) {
-      if (error.response.status === 400) {
-        errorMessage = 'Bad request: Invalid request body.';
-      } else if (error.response.status === 404) {
-        errorMessage = 'Not found: The requested resource could not be found.';
-      } else if (error.response.status === 500) {
-        errorMessage = 'Server error: Please try again later.';
-      }
-    } else if (error.request) {
-      errorMessage = 'A network error occurred. Please check your connection and try again.';
-    } else {
-      errorMessage = `Error: ${error.message}`;
+/*close event */
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', closeModal);
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Escape') {
+        return closeModal();
     }
-
-    modalMessage.textContent = errorMessage;
-    modal.classList.add('active');
-    modalOverlay.classList.add('active');
-  }
 });
-
-closeModal.addEventListener('click', closeModalWindow);
-
-modalOverlay.addEventListener('click', closeModalWindow);
+function closeModal(event) {
+    modal.classList.add("visibility-hidden");
+    modalInfo.innerHTML = "";
+    form.reset();
+    
+}
+function Sus() {
+    return messageInfo.insertAdjacentHTML('afterend', '<p class="state_massage">Succes!</p>');
+}

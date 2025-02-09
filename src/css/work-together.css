@@ -6,7 +6,8 @@
   background-position: right;
   background-size: 85px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding:  32px 16px;
+  
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -240,9 +241,9 @@ left: 0;
   .footer {
     max-width: 768px;
     margin: 0 auto;
-    /* padding: 80px 32px; */
     background-image: url(../img/work-together/elements_tablet_x1.png);
     background-size: 198px;
+    padding: 88px 16px 169px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -260,12 +261,18 @@ left: 0;
   .logo-pic {
     width: 70px;
     height: 70px;
+    gap: 20px;
   }
 
   .footer-text {
     font-size: 64px;
     font-weight: 500;
   }
+
+.footer-inline-text {
+  width: 442px;
+  height: 64px;
+}
 
 .footer-form-contact {
     justify-content: space-between;
@@ -303,6 +310,7 @@ left: 0;
     max-width: 1140px;
     background-image: url(../img/work-together/glass_effect_desktop_x1.png);
     background-size: 653px 636px;
+    padding: 88px 196px 169px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -313,87 +321,29 @@ left: 0;
     }
   }
 
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .footer-head-container {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .logo-pic {
-    width: 70px;
-    height: 70px;
-  }
-
-  .footer-text {
-    font-size: 64px;
-    font-weight: 500;
-    line-height: 64px;
-  }
-
-  .footer-form-contact {
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .form-inputs {
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-  }
-
-  .footer-input {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    height: 44px;
-    width: 390px;
-  }
-
-  .footer-send-btn {
-    width: 150px;
-    height: 150px;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.36px;
-  }
-
-  .link-for-footer {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.36px;
-    padding: 18px 32px;
-  }
-
-  .link-for-footer-email {
-    margin-right: 8px;
-  }
-
-  .modal {
-    padding: 64px;
-  }
-
-  .close-button {
-    top: -45px;
-    right: -40px;
-    font-size: 26px;
-    margin-bottom: 26px;
-  }
-
-  .thank-you-text {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 30px;
-    margin-bottom: 16px;
-  }
-
-  .thank-you-text--two {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-  }
-}
+    .model {
+      padding: 64px;
+      width: 492px;
+      height: 246px;
+    }
+  
+    .close-button {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .close-icon_menu {
+      width: 12px;
+      height: 12px;
+      stroke: #fbfbfb;
+      fill: #fbfbfb;
+    }
+  
+    .info_item {
+      gap: 0;
+    }
+  
+    .text_info {
+      height: 30px;
+    }
+    }
