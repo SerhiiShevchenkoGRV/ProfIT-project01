@@ -296,7 +296,7 @@ html {
     white-space: nowrap;
   }
 
-  .mobile-menu {
+  .mobile-menu.is-open {
     display: none;
   }
 }
@@ -310,7 +310,7 @@ html {
     display: none;
   }
 
-  .mobile-menu {
+  .mobile-menu.is-open {
     display: none;
   }
 }
