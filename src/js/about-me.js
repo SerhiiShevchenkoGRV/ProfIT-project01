@@ -18,7 +18,6 @@ document.querySelector('.acord-about-el').addEventListener('click', e => {
   acordeonAbout
 });
 
-
 const aboutSwiper = new Swiper('.js-about-swiper', {
   modules: [Navigation, Keyboard],
   speed: 400,
@@ -27,7 +26,6 @@ const aboutSwiper = new Swiper('.js-about-swiper', {
   breakpoints: {
     768: {
       slidesPerView: 3,
-    
     },
     1440: {
       slidesPerView: 6,
@@ -38,7 +36,6 @@ const aboutSwiper = new Swiper('.js-about-swiper', {
     onlyInViewport: false,
     pageUpDown: true,
   },
-  
 });
 
 document.querySelector('.js-swiper-btn').addEventListener('click', e => {
