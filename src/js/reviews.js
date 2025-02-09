@@ -11,7 +11,7 @@ async function reviewApi() {
 function createRewiew(response) {
     const { author, avatar_url, review } = response;
 
-    return `<li class="swiper-slide">
+    return `<li class="swiper-slide swiper-slide-rev">
         <img src="${avatar_url}" alt="Avatar" class="avatar" />
         <h3 class="name-autor">${author}</h3>
         <p class="review-text">${review}</p>
@@ -20,7 +20,7 @@ function createRewiew(response) {
 
 const swiperWrapper = document.querySelector(".swiper-wrapper-rev");
 const reviewsSection = document.querySelector(".reviews");
-const elementsField = document.querySelector(".swiper");
+const elementsField = document.querySelector(".swiper-rev");
 
 let swiper;
 let errorOccurred = false;
@@ -64,7 +64,6 @@ async function addReview() {
                 }
             }
         });
-
         updateNavigationButtons(swiper);
     } catch (error) {
         errorOccurred = true;
