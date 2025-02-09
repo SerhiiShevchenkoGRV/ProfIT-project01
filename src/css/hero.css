@@ -38,6 +38,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
+  padding-right: 16px;
   gap: 4px;
 }
 
@@ -101,6 +102,7 @@
     }
   }
   .hero-title {
+    max-width: 632px;
     font-size: 90px;
     line-height: 1;
     letter-spacing: -0.03em;
