@@ -1,19 +1,5 @@
 .footer {
-  background-color: #1c1d20;
-  background-image: url(../img/work-together/glass_effect_mobile_x1.png);
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 85px;
   margin: 0 auto;
-}
-
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .footer {
-    background-image: url(../img/work-together/glass_effect_mobile_x2.png);
-  }
 }
 
 .footer-container {
@@ -21,6 +7,20 @@
   flex-direction: column;
   padding-top: 32px;
   padding-bottom: 32px;
+  background-color: #1c1d20;
+  background-image: url(../img/work-together/glass_effect_mobile_x1.png);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 85px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .footer-container {
+    background-image: url(../img/work-together/glass_effect_mobile_x2.png);
+  }
 }
 
 .footer-head-container {
@@ -254,21 +254,21 @@
   .footer {
     max-width: 768px;
     margin: 0 auto;
+  }
+
+  .footer-container {
     background-image: url(../img/work-together/elements_tablet_x1.png);
     background-size: 198px;
+    padding-top: 88px;
+    padding-bottom: 169px;
   }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    .footer {
+    .footer-container {
       background-image: url(../img/work-together/elements_tablet_x2.png);
     }
-  }
-
-  .footer-container {
-    padding-top: 88px;
-    padding-bottom: 169px;
   }
 
   .footer-head-container {
@@ -346,9 +346,11 @@
 
 @media screen and (min-width: 1440px) {
   .footer {
-    max-width: 1140px;
+    max-width: 1440px;
+
     background-image: url(../img/work-together/glass_effect_desktop_x1.png);
     background-size: 653px 636px;
+    background-position: right;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -361,5 +363,22 @@
 
   .footer-container {
     padding: 88px 0 169px;
+    width: 1048px;
+  }
+
+  .footer-form-contact {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 86px;
+  }
+
+  .form-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .footer-input {
+    width: 390px;
   }
 }
