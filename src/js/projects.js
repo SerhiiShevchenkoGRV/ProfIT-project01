@@ -22,9 +22,7 @@ const projectImages = [
 ]
 
 
-
 const projectCards = document.querySelector('.projects-list');
-
 
 function projectGalleryImages(img) {
   return img
@@ -63,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
+    loop:false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -77,11 +76,13 @@ document.addEventListener('DOMContentLoaded', function () {
       
     },
     mousewheel: {
-      forceToAxis: true,
+      enabled:true,
+      
       sensitivity: 1,
-      invert: false,
+    
+      releaseOnEdges: true
     },
-
+    preventInteractionOnTransition: false,
     simulateTouch: true,
     grabCursor: true,
     on: {
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
   });
-  
+ 
   function slideChangeProjects(swiper) {
     const prevButton = document.querySelector('.swiper-button-prev');
     const nextButton = document.querySelector('.swiper-button-next');
@@ -108,3 +109,4 @@ document.addEventListener('DOMContentLoaded', function () {
   swiper.update();
     
 });
+
