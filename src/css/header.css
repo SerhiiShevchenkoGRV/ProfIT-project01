@@ -41,29 +41,20 @@ html {
 .header-btn {
   display: none;
 }
-/* .header {
-  position: absolute;
-  top: 32px;
-  left: 16px;
-  right: 0;
-  background: transparent;
-  z-index: 10;
-} */
+
 .header-text-logo {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: -0.02em;
   text-decoration: none;
-  color: #fafafa; /* Цвет текста color: #fafafa; */
+  color: #fafafa;
 }
 
 @media screen and (min-width: 768px) {
   .header-cont {
     max-width: 768px;
     padding: 0 32px;
-    /* padding-right: 32px; */
-    /* padding-left: 16px; */
   }
 
   .header-burger-btn {
@@ -95,7 +86,18 @@ html {
     font: 500 16px 'Inter Tight', sans-serif;
     letter-spacing: -0.02em;
     text-underline-offset: 3px;
-    color: #fafafa; /* Цвет текста color: #fafafa; */
+    color: #fafafa;
+    position: relative;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    margin-bottom: -15px;
+    top: -20px;
+  }
+  .header-nav-menu {
+    font: 500 16px 'Inter Tight', sans-serif;
+    letter-spacing: -0.02em;
+    text-underline-offset: 3px;
+    color: #fafafa;
     position: relative;
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -105,12 +107,15 @@ html {
 
   /* Стили для выпадающего меню */
 
-  /* Центрируем выпадающее меню */
   .dropdown {
     position: relative;
   }
   .dropdown-content.show {
     display: block;
+  }
+  .header-nav-item:hover,
+  .header-nav-item:focus {
+    color: #e0373f;
   }
 
   .dropdown-content {
@@ -125,36 +130,37 @@ html {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
-    color: #fafafa; /* Цвет текста color: #fafafa; */
+    color: #fafafa;
     text-align: center;
     white-space: nowrap;
   }
-
-  .header-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-    border: none;
-    border-radius: 60px;
-    padding: 14px 31px;
-    width: 163px;
-    height: 55px;
-    margin-top: -22px;
-    background: #ed3b44;
-    font-family: 'Inter Tight', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 129%;
-    letter-spacing: -0.02em;
-    outline: none;
-    color: #fbfbfb;
-    cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    white-space: nowrap;
-  }
 }
+
+.header-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  border: none;
+  border-radius: 60px;
+  padding: 14px 31px;
+  width: 163px;
+  height: 55px;
+  margin-top: -22px;
+  background: #ed3b44;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  outline: none;
+  color: #fbfbfb;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
 @media screen and (min-width: 1440px) {
   .header-cont {
     max-width: 1440px;
@@ -163,35 +169,6 @@ html {
     display: none;
   }
 }
-
-/* .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-} */
-
-/* Header
-.header {
-  position: absolute;
-  top: 32px;
-  left: 16px;
-  right: 0;
-  background: transparent;
-  z-index: 10;
-} */
-
-/* .header .header-cont {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
 
 /* Лого */
 .header-logo {
