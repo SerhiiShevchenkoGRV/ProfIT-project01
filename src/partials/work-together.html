@@ -13,11 +13,11 @@
         <span class="footer-text-together">TOGETHER</span>
       </h2>
     </div>
-    <form class="footer-form-contact">
+    <form class="footer-form-contact" id="cooperationForm">
       <div class="form-inputs">
         <input
           class="footer-input"
-          id="footer-input-email"
+          id="email"
           type="email"
           placeholder="clients@gmail.com"
           required
@@ -26,7 +26,7 @@
         />
         <input
           class="footer-input"
-          id="footer-input-comments"
+          id="comments"
           type="text"
           placeholder="comments"
           maxlength="100"
@@ -48,6 +48,21 @@
         target="_blank"
         >+380 11 1111 11 11</a
       >
+    </div>
+  </div>
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal" id="modal">
+    <button type="button" class="modal-btn">
+      <svg class="modal-btn-icon" width="12" height="12">
+        <use href="./img/sprite.svg#icon-close-footer"></use>
+      </svg>
+    </button>
+    <div class="modal-info">
+      <h2 class="modal-title">Thank you for your interest in cooperation!</h2>
+      <p class="modal-text">
+        The manager will contact you shortly to discuss further details and
+        opportunities for cooperation. Please stay in touch.
+      </p>
     </div>
   </div>
 </footer>

@@ -1,78 +1,42 @@
-const BASE_URL = "https://https://portfolio-js.b.goit.study/api-docs/api";
-const REQUEST_URL = "https://portfolio-js.b.goit.study/api-docs/api/requests";
-const form = document.querySelector('.form-subscribe');
-const closeBtn = document.querySelector('.close-button');
-const modal = document.querySelector('.model_overlay');
-const modalInfo = document.querySelector('.info_item');
-const messageInfo = form.querySelector('.mail_js')
+const form = document.getElementById('cooperationForm');
+const modal = document.getElementById('modal');
+const modalOverlay = document.getElementById('modalOverlay');
+const closeBtn = document.querySelector('.modal-btn');
 
-/*messageInfo.insertAdjacentHTML('afterend', '<p class="state_massage">Succes!</p>');*/
+form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const comments = document.getElementById('comments').value;
 
-function fetchData(url = BASE_URL, options = {}) {
-    return fetch(url, options)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            return response.json();
-    })
-};
-
-form.addEventListener("submit", postRequest);
-function postRequest(event) {
-    event.preventDefault()
-    const mail = event.target.elements.email.value;
-    const comments = event.target.elements.comment.value;
-    fetch(REQUEST_URL, {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email: mail,  comment: comments}),
-    
-})
-.then(response => {
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            return response.json();
-})
-.then(data => arr(data))
-.then(log => modalInfo.insertAdjacentHTML("beforeend", createMarkup(log)))
-.catch(error => console.log(error.message))
-} 
-
-function arr(data) {
-    const i = [data]; 
-    return i;
-}
-
-function createMarkup(arr) {
-    modal.classList.remove("visibility-hidden");
-    return arr.map(({ title, message }) => `
-        <div class="text_info">
-        <p>${title}</p>
-        </div>
-        <div class="supporting_text">
-        <p>${message}</p>
-        </div>
-    `).join("");
-}
-
-/*close event */
-closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', closeModal);
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Escape') {
-        return closeModal();
+    try {
+        const response = await fetch('https://portfolio-js.b.goit.study/api-docs', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, comments })
+        });
+        
+        if (response.ok) {
+            form.reset();
+            modal.style.display = 'flex';
+            modalOverlay.style.display = 'block';
+        } else {
+            alert('Error submitting form. Please check your input and try again.');
+        }
+    } catch (error) {
+        alert('Network error. Please try again later.');
     }
 });
-function closeModal(event) {
-    modal.classList.add("visibility-hidden");
-    modalInfo.innerHTML = "";
-    form.reset();
-    
+
+function closeModal() {
+    modal.style.display = 'none';
+    modalOverlay.style.display = 'none';
 }
-function Sus() {
-    return messageInfo.insertAdjacentHTML('afterend', '<p class="state_massage">Succes!</p>');
-}
+
+closeBtn.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', function(event) {
+    if (event.target === modalOverlay) closeModal();
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') closeModal();
+});
