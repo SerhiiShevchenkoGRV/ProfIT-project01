@@ -4,79 +4,94 @@ document.addEventListener('DOMContentLoaded', () => {
     closeMenuBtn: document.querySelector('[data-menu-close]'),
     menu: document.querySelector('[data-menu]'),
     navLinks: document.querySelectorAll('.mobile-menu-list .mobile-nav-link'),
-    orderProjectBtn: document.querySelector('.mobile-btn'),
+    orderProjectBtnMobile: document.querySelector('.mobile-btn'),
+    orderProjectBtnDesktop: document.querySelector('.header-btn'),
+    dropdowns: document.querySelectorAll('.dropdown'),
   };
 
-  // Перевірка наявності елементів
   if (refs.openMenuBtn && refs.closeMenuBtn && refs.menu) {
-    refs.openMenuBtn.addEventListener('click', toggleMenu);
-    refs.closeMenuBtn.addEventListener('click', toggleMenu);
+    refs.openMenuBtn.addEventListener('click', () => {
+      console.log('Open menu clicked!');
+      toggleMenu();
+    });
 
-    // Закриття меню при кліку на посилання
+    refs.closeMenuBtn.addEventListener('click', () => {
+      console.log('Close menu clicked!');
+      toggleMenu();
+    });
+
     if (refs.navLinks.length) {
       refs.navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          window.location.href = link.getAttribute('href'); // Переходимо до відповідної секції
+          console.log(`Navigating to: ${link.getAttribute('href')}`);
+          window.location.href = link.getAttribute('href');
           closeMenu();
         });
       });
     }
 
-    // Додавання функціоналу для кнопки Order the project в мобільному меню
-    if (refs.orderProjectBtn) {
-      refs.orderProjectBtn.addEventListener('click', () => {
-        window.location.href = '#work together'; // Переходимо до секції 'Work together'
+    // Обробник для мобільної кнопки "Order the project"
+    if (refs.orderProjectBtnMobile) {
+      refs.orderProjectBtnMobile.addEventListener('click', () => {
+        console.log('Order the project clicked (mobile)!');
+        scrollToWorkTogetherSection();
         closeMenu();
+      });
+    }
+
+    // Обробник для десктопної кнопки "Order the project"
+    if (refs.orderProjectBtnDesktop) {
+      refs.orderProjectBtnDesktop.addEventListener('click', () => {
+        console.log('Order the project clicked (desktop)!');
+        scrollToWorkTogetherSection();
+      });
+    }
+
+    // Обробники для меню, що випадає
+    if (refs.dropdowns.length) {
+      refs.dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function (event) {
+          const dropdownContent = this.querySelector('.dropdown-content');
+          dropdownContent.classList.toggle('show');
+          event.stopPropagation();
+        });
       });
     }
   }
 
-  // Функція для відкриття та закриття меню
-  function toggleMenu() {
-    refs.menu.classList.toggle('is-open');
-  }
-
-  // Функція для закриття меню
-  function closeMenu() {
-    refs.menu.classList.remove('is-open');
-  }
-});
-
-// ==============================================================================
-
-// Показати/приховати меню, що випадає
-const dropdowns = document.querySelectorAll('.dropdown');
-
-dropdowns.forEach(dropdown => {
-  dropdown.addEventListener('click', function (event) {
-    const dropdownContent = this.querySelector('.dropdown-content');
-
-    if (dropdownContent.style.display === 'block') {
-      dropdownContent.style.display = 'none';
-    } else {
-      dropdownContent.style.display = 'block';
-    }
-
-    event.stopPropagation();
-  });
-});
-
-// Плавний скролл для якірних посилань
-const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-anchorLinks.forEach(link => {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // Плавно прокручуємо до цільового елементу
-      targetElement.scrollIntoView({
+  // Функция для плавного скроллинга к секции "work-together"
+  function scrollToWorkTogetherSection() {
+    const workTogetherSection = document.getElementById('work-togeth');
+    if (workTogetherSection) {
+      workTogetherSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
     }
+  }
+
+  function toggleMenu() {
+    refs.menu.classList.toggle('is-open');
+  }
+
+  function closeMenu() {
+    refs.menu.classList.remove('is-open');
+  }
+
+  // Закрити меню при зміні ширини екрана (для планшетів та десктоп)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 767) {
+      closeMenu();
+    }
+  });
+
+  // Закриття випадаючих меню при кліку поза ними
+  document.addEventListener('click', function (event) {
+    refs.dropdowns.forEach(dropdown => {
+      const dropdownContent = dropdown.querySelector('.dropdown-content');
+      if (!dropdown.contains(event.target)) {
+        dropdownContent.classList.remove('show');
+      }
+    });
   });
 });

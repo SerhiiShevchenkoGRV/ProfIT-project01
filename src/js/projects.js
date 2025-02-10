@@ -22,10 +22,7 @@ const projectImages = [
 ]
 
 
-
 const projectCards = document.querySelector('.projects-list');
-const prevButton = document.querySelector('.swiper-button-prev');
-const nextButton = document.querySelector('.swiper-button-next');
 
 function projectGalleryImages(img) {
   return img
@@ -64,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
+    loop:false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -75,20 +73,40 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+      
     },
     mousewheel: {
-      forceToAxis: true,
+      enabled:true,
+      
       sensitivity: 1,
-      invert: false,
+    
+      releaseOnEdges: true
     },
-
-    touchEventsTarget: 'container',
+    preventInteractionOnTransition: false,
     simulateTouch: true,
     grabCursor: true,
-  });
+    on: {
+      slideChange: () => slideChangeProjects(swiper),
+    },
 
-  swiper.on('slideChange', function () {
-    prevButton.classList.toggle('custom-disabled', swiper.isBeginning);
-    nextButton.classList.toggle('custom-disabled', swiper.isEnd);
+    
   });
+ 
+  function slideChangeProjects(swiper) {
+    const prevButton = document.querySelector('.swiper-button-prev');
+    const nextButton = document.querySelector('.swiper-button-next');
+    
+    if (prevButton && nextButton) {
+      prevButton.disabled = swiper.isBeginning;
+      nextButton.disabled = swiper.isEnd;
+
+      prevButton.classList.toggle('disabled', swiper.isBeginning);
+      nextButton.classList.toggle('disabled', swiper.isEnd);
+    }
+  }
+
+  slideChangeProjects(swiper);
+  swiper.update();
+    
 });
+
