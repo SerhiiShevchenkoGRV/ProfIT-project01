@@ -1,5 +1,6 @@
 const form = document.getElementById('cooperationForm');
 const modal = document.getElementById('modal');
+const modalOverlay = document.getElementById('modalOverlay');
 const closeBtn = document.querySelector('.modal-btn');
 
 form.addEventListener('submit', async function(event) {
@@ -17,6 +18,7 @@ form.addEventListener('submit', async function(event) {
         if (response.ok) {
             form.reset();
             modal.style.display = 'flex';
+            modalOverlay.style.display = 'block';
         } else {
             alert('Error submitting form. Please check your input and try again.');
         }
@@ -27,11 +29,12 @@ form.addEventListener('submit', async function(event) {
 
 function closeModal() {
     modal.style.display = 'none';
+    modalOverlay.style.display = 'none';
 }
 
 closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', function(event) {
-    if (event.target === modal) closeModal();
+modalOverlay.addEventListener('click', function(event) {
+    if (event.target === modalOverlay) closeModal();
 });
 
 document.addEventListener('keydown', function(event) {
