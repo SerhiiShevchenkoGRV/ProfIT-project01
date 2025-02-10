@@ -9,10 +9,33 @@
 }
 
 .hero-container {
-  min-width: 320px;
   padding: 0 16px;
 }
 
+@media only screen and (max-width: 320px) {
+  .hero-section {
+    padding-top: 200px;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .hero-container {
+    padding: 0 16px;
+    min-width: auto;
+  }
+  .hero-title {
+    font-size: 14px;
+    max-width: 180px;
+    margin-bottom: 120px;
+  }
+
+  .hero-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 45px;
+    gap: 12px;
+  }
+}
 /* ------------------------------------ */
 @media only screen and (min-resolution: 2dppx) {
   .hero-section {
