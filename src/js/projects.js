@@ -95,13 +95,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevButton = document.querySelector('.swiper-button-prev');
     const nextButton = document.querySelector('.swiper-button-next');
     
-    prevButton.disabled = swiper.isBeginning;
-    nextButton.disabled = swiper.isEnd;
+    if (prevButton && nextButton) {
+      prevButton.disabled = swiper.isBeginning;
+      nextButton.disabled = swiper.isEnd;
 
-    prevButton.classList.toggle('disabled', swiper.isBeginning);
-    nextButton.classList.toggle('disabled', swiper.isEnd);
+      prevButton.classList.toggle('disabled', swiper.isBeginning);
+      nextButton.classList.toggle('disabled', swiper.isEnd);
+    }
   }
-  slideChangeProjects(swiper);
-})
-    
 
+  slideChangeProjects(swiper);
+  swiper.update();
+    
+});
