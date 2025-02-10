@@ -117,3 +117,24 @@ picturesLines.forEach(li => {
 
 //   li.innerHTML = covers;
 // });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const coversSection = document.querySelector('.covers-section');
+
+  if (!coversSection) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          coversSection.classList.add('animate');
+        } else {
+          coversSection.classList.remove('animate');
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(coversSection);
+});

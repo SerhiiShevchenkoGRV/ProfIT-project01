@@ -28,7 +28,8 @@ function projectGalleryImages(img) {
   return img
     .map(
       image =>
-        ` <li class="projects-cards swiper-slide">
+        ` <div class="swiper-slide">
+          <li class="projects-cards">
           <div class="project-top-card">
             <ul class="project-tags">
               <li class="project-tag">#react</li>
@@ -39,7 +40,7 @@ function projectGalleryImages(img) {
             <h3 class="projects-text">
               Programming Across Borders: Ideas, Technologies, Innovations
             </h3>
-            <a target="_blank" href="https://github.com/SerhiiShevchenkoGRV/ProfIT-project01" class="project-button">See projects</a>
+            <a target="_blank" href="https://github.com/SerhiiShevchenkoGRV/ProfIT-project01" class="project-button">See project</a>
           </div>
 
           <div class="project-bottom-card">
@@ -50,7 +51,8 @@ function projectGalleryImages(img) {
               <img src="${image.pct}" alt="Project image" />
             </picture>
           </div>
-        </li>`
+        </li>
+        </div>`
     )
     .join('');
 }
@@ -60,7 +62,6 @@ projectCards.innerHTML = projectGalleryImages(projectImages);
 document.addEventListener('DOMContentLoaded', function () {
   const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
-    spaceBetween: 20,
     loop:false,
     navigation: {
       nextEl: '.swiper-button-next',
