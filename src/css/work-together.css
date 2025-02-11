@@ -19,12 +19,10 @@
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
-
   .footer-container {
     background-image: url(../img/work-together/glass_effect_mobile_x2.png);
   }
 }
-
 
 .footer-container {
   display: flex;
@@ -32,7 +30,6 @@
   padding-top: 32px;
   padding-bottom: 32px;
 }
-
 
 .footer-head-container {
   display: flex;
@@ -365,10 +362,9 @@
     max-width: 1440px;
 
     background-image: url(../img/work-together/glass_effect_desktop_x1.png);
-    background-size: 653px 636px;
-    background-position: right;
-
-
+    background-position: 1040px top;
+    background-size: 768px;
+    background-repeat: no-repeat;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -383,7 +379,6 @@
     padding: 88px 0 169px;
     width: 1048px;
     background: none;
-    overflow: none;
   }
 
   .footer-form-contact {
