@@ -72,8 +72,9 @@ button {
   margin: 0 auto;
   padding: 0 16px;
 }
+
 /* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .section {
     margin-bottom: 96px;
   }
@@ -84,7 +85,7 @@ button {
   }
 }
 /* Styles for Desktop devices */
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
   .section {
     margin-bottom: 164px;
   }
