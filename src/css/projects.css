@@ -33,7 +33,7 @@
 }
 
 .project-tag:hover {
-    box-shadow: 0px 4px 15px rgba(250, 1, 1, 0.911);
+    box-shadow: 0 0 10px 2px #ed3b44;
 }
 
 .project-tags {
@@ -127,9 +127,9 @@
 }
 
 
-.project-button-prev:focus,
-.project-button-next:focus {
-    box-shadow: 0px 4px 15px rgba(250, 1, 1, 0.911);
+.project-button-prev:hover,
+.project-button-next:hover {
+    box-shadow: 0 0 10px 2px #ed3b44;
 }
 
 .project-button-prev:disabled,
