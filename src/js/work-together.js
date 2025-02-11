@@ -71,9 +71,12 @@ document.addEventListener('keydown', function (event) {
 
 emailInput.addEventListener('input', () => {
   validationText.classList.remove('error');
-  this.classList.remove('error');
+  emailInput.classList.remove('error');
+  inputsContainer.classList.remove('error');
 });
 
 emailInput.addEventListener('blur', () => {
   emailInput.classList.remove('error');
+  inputsContainer.classList.remove('error');
+  validationText.classList.remove('error');
 });
