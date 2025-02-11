@@ -349,10 +349,9 @@
     max-width: 1440px;
 
     background-image: url(../img/work-together/glass_effect_desktop_x1.png);
-    /* position: relative; */
-    background-repeat: no-repeat;
-    background-position: 1040px top;
-    background-size: 768px;
+    background-size: 653px 636px;
+    background-position: right;
+
   }
 
   @media (min-device-pixel-ratio: 2),
