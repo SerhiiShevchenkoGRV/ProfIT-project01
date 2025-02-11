@@ -13,13 +13,11 @@ form.addEventListener('submit', async function (event) {
   const comments = document.getElementById('comments').value;
 
   if (emailInput.validity.valid) {
-    validationText.style.display = 'none';
-
-    emailInput.style.borderColor = '#3cbc81';
     validationText.textContent = 'Succes!';
-    validationText.style.display = 'inline';
-    validationText.style.color = '#3cbc81';
-    inputsContainer.style.gap = '38px';
+    validationText.classList.add('succes');
+    emailInput.classList.add('succes');
+    inputsContainer.classList.add('succes');
+
     try {
       const response = await fetch(
         'https://portfolio-js.b.goit.study/api-docs',
@@ -41,11 +39,10 @@ form.addEventListener('submit', async function (event) {
       alert('Network error. Please try again later.');
     }
   } else {
-    emailInput.style.borderColor = '#e74a3b';
-    validationText.style.display = 'inline';
     validationText.textContent = 'Invalid email, try again';
-    validationText.style.color = '#e74a3b';
-    inputsContainer.style.gap = '38px';
+    validationText.classList.add('error');
+    emailInput.classList.add('error');
+    inputsContainer.classList.add('error');
   }
 });
 
@@ -53,8 +50,10 @@ function closeModal() {
   modal.style.display = 'none';
   modalOverlay.style.display = 'none';
 
-  validationText.style.display = 'none';
-  emailInput.style.borderColor = 'rgba(250, 250, 250, 0.2)npm';
+  // validationText.textContent = 'Succes!';
+  validationText.classList.remove('succes');
+  emailInput.classList.remove('succes');
+  inputsContainer.classList.remove('succes');
 }
 
 closeBtn.addEventListener('click', closeModal);
@@ -68,4 +67,13 @@ document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeModal();
   }
+});
+
+emailInput.addEventListener('input', () => {
+  validationText.classList.remove('error');
+  this.classList.remove('error');
+});
+
+emailInput.addEventListener('blur', () => {
+  emailInput.classList.remove('error');
 });
