@@ -34,6 +34,7 @@ form.addEventListener('submit', async function (event) {
         form.reset();
         modal.style.display = 'flex';
         modalOverlay.style.display = 'block';
+        disableBodyScroll(); // Disable scroll when modal is open
       } else {
         alert('Error submitting form. Please check your input and try again.');
       }
@@ -52,9 +53,10 @@ form.addEventListener('submit', async function (event) {
 function closeModal() {
   modal.style.display = 'none';
   modalOverlay.style.display = 'none';
+  enableBodyScroll(); // Enable scroll when modal is closed
 
   validationText.style.display = 'none';
-  emailInput.style.borderColor = 'rgba(250, 250, 250, 0.2)npm';
+  emailInput.style.borderColor = 'rgba(250, 250, 250, 0.2)';
 }
 
 closeBtn.addEventListener('click', closeModal);
@@ -69,3 +71,11 @@ document.addEventListener('keydown', function (event) {
     closeModal();
   }
 });
+
+function disableBodyScroll() {
+  document.body.classList.add('no-scroll');
+}
+
+function enableBodyScroll() {
+  document.body.classList.remove('no-scroll');
+}
