@@ -13,15 +13,26 @@
   background-repeat: no-repeat;
   background-position: right;
   background-size: 85px;
+  margin: 0 auto;
 }
 
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
+
   .footer-container {
     background-image: url(../img/work-together/glass_effect_mobile_x2.png);
   }
 }
+
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 
 .footer-head-container {
   display: flex;
@@ -271,6 +282,11 @@
     }
   }
 
+  .footer-container {
+    padding-top: 88px;
+    padding-bottom: 169px;
+  }
+
   .footer-head-container {
     margin-bottom: 64px;
   }
@@ -351,6 +367,7 @@
     background-image: url(../img/work-together/glass_effect_desktop_x1.png);
     background-size: 653px 636px;
     background-position: right;
+
 
   }
 
