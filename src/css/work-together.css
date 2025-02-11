@@ -351,6 +351,7 @@
     background-image: url(../img/work-together/glass_effect_desktop_x1.png);
     background-size: 653px 636px;
     background-position: right;
+
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -364,6 +365,8 @@
   .footer-container {
     padding: 88px 0 169px;
     width: 1048px;
+    background: none;
+    overflow: none;
   }
 
   .footer-form-contact {
