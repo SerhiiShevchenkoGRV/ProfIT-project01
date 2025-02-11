@@ -38,6 +38,7 @@ html {
 .header-nav-list {
   display: none;
 }
+
 .header-btn {
   display: none;
 }
@@ -137,7 +138,7 @@ html {
 }
 
 .header-btn {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: row;

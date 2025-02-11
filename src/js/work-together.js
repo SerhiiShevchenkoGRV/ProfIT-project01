@@ -54,7 +54,7 @@ function closeModal() {
   modalOverlay.style.display = 'none';
 
   validationText.style.display = 'none';
-  emailInput.style.borderColor = 'rgba(250, 250, 250, 0.2)';
+  emailInput.style.borderColor = 'rgba(250, 250, 250, 0.2)npm';
 }
 
 closeBtn.addEventListener('click', closeModal);
