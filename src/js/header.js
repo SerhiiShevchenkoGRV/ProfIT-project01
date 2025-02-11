@@ -12,10 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (refs.openMenuBtn && refs.closeMenuBtn && refs.menu) {
     refs.openMenuBtn.addEventListener('click', () => {
       toggleMenu();
+      disableBodyScroll();
     });
 
     refs.closeMenuBtn.addEventListener('click', () => {
       toggleMenu();
+      enableBodyScroll();
     });
 
     if (refs.navLinks.length) {
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
           window.location.href = link.getAttribute('href');
           closeMenu();
+          enableBodyScroll();
         });
       });
     }
@@ -32,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       refs.orderProjectBtnMobile.addEventListener('click', () => {
         scrollToWorkTogetherSection();
         closeMenu();
+        enableBodyScroll();
       });
     }
 
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Функция для плавного скроллинга к секции "work-together"
+  // Функція для плавного скролінгу до секції "work-together"
   function scrollToWorkTogetherSection() {
     const workTogetherSection = document.getElementById('work-togeth');
     if (workTogetherSection) {
@@ -73,10 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
     refs.menu.classList.remove('is-open');
   }
 
+  // Функція для відключення скролінгу на body
+  function disableBodyScroll() {
+    document.body.classList.add('no-scroll');
+  }
+
+  function enableBodyScroll() {
+    document.body.classList.remove('no-scroll');
+  }
+
   // Закрити меню при зміні ширини екрана (для планшетів та десктоп)
   window.addEventListener('resize', () => {
     if (window.innerWidth > 767) {
       closeMenu();
+      enableBodyScroll();
     }
   });
 
