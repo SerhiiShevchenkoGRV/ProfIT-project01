@@ -77,7 +77,7 @@ async function addReview() {
 function updateNavigationButtons(swiperReviews) {
     const nextButton = document.querySelector('.reviews-button-next');
     const prevButton = document.querySelector('.reviews-button-prev');
-    
+
 
     if (swiperReviews.isEnd) {
         swiperReviews.params.loop = false;
