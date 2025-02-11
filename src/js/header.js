@@ -11,19 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (refs.openMenuBtn && refs.closeMenuBtn && refs.menu) {
     refs.openMenuBtn.addEventListener('click', () => {
-      console.log('Open menu clicked!');
       toggleMenu();
     });
 
     refs.closeMenuBtn.addEventListener('click', () => {
-      console.log('Close menu clicked!');
       toggleMenu();
     });
 
     if (refs.navLinks.length) {
       refs.navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          console.log(`Navigating to: ${link.getAttribute('href')}`);
           window.location.href = link.getAttribute('href');
           closeMenu();
         });
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Обробник для мобільної кнопки "Order the project"
     if (refs.orderProjectBtnMobile) {
       refs.orderProjectBtnMobile.addEventListener('click', () => {
-        console.log('Order the project clicked (mobile)!');
         scrollToWorkTogetherSection();
         closeMenu();
       });
@@ -42,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Обробник для десктопної кнопки "Order the project"
     if (refs.orderProjectBtnDesktop) {
       refs.orderProjectBtnDesktop.addEventListener('click', () => {
-        console.log('Order the project clicked (desktop)!');
         scrollToWorkTogetherSection();
       });
     }

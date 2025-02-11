@@ -97,3 +97,9 @@
     height: 314px;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .covers-section > .container {
+    max-width: 1520px;
+  }
+}

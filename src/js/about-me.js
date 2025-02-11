@@ -1,6 +1,6 @@
 import Accordion from 'accordion-js';
 
-import { Navigation, Keyboard } from 'swiper/modules';
+import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import Swiper from 'swiper';
 
 
@@ -19,7 +19,7 @@ document.querySelector('.acord-about-el').addEventListener('click', e => {
 });
 
 const aboutSwiper = new Swiper('.js-about-swiper', {
-  modules: [Navigation, Keyboard],
+  modules: [Navigation, Keyboard, Mousewheel],
   speed: 400,
   loop: true,
   slidesPerView: 2,
@@ -35,6 +35,11 @@ const aboutSwiper = new Swiper('.js-about-swiper', {
     enabled: true,
     onlyInViewport: false,
     pageUpDown: true,
+  },
+  mousewheel: {
+    enabled: true,
+    sensitivity: 1,
+    releaseOnEdges: true,
   },
 });
 
