@@ -16,8 +16,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  margin: 0 auto;
+  position: relative;
 }
 
 /* Лого */
@@ -27,12 +26,6 @@ html {
   justify-content: flex-start;
   flex-direction: row;
   gap: 8px;
-}
-
-.header-cont {
-  padding: 0 16px;
-  /* margin: 0 auto; */
-  position: relative;
 }
 
 .header-nav-list {
@@ -55,7 +48,6 @@ html {
 @media screen and (min-width: 768px) {
   .header-cont {
     max-width: 768px;
-    padding: 0 32px;
   }
 
   .header-burger-btn {
@@ -68,21 +60,25 @@ html {
     margin: 0;
     padding: 0;
   }
+
   .header-btn {
     display: flex;
   }
+
   .header-navigation {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
   }
+
   .header-nav-list {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
+
   .header-nav-item {
     font: 500 16px 'Inter Tight', sans-serif;
     letter-spacing: -0.02em;
@@ -94,6 +90,7 @@ html {
     margin-bottom: -15px;
     top: -20px;
   }
+
   .header-nav-menu {
     font: 500 16px 'Inter Tight', sans-serif;
     letter-spacing: -0.02em;
@@ -111,9 +108,11 @@ html {
   .dropdown {
     position: relative;
   }
+
   .dropdown-content.show {
     display: block;
   }
+
   .header-nav-item:hover,
   .header-nav-item:focus {
     color: #ed3b44;
@@ -165,6 +164,7 @@ html {
   .header-cont {
     max-width: 1440px;
   }
+
   .header-burger-btn {
     display: none;
   }
@@ -228,6 +228,7 @@ html {
   cursor: pointer;
   overflow: hidden;
 }
+
 .burger-icon {
   width: 100%;
   height: 100%;
@@ -256,6 +257,7 @@ html {
   width: 32px;
   height: 32px;
 }
+
 .modal-icon-close {
   stroke: #fbfbfb;
   fill: #fbfbfb;
