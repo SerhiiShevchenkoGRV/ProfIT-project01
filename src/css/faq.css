@@ -1,3 +1,5 @@
+
+
 .faq-title {
   font-weight: 600;
   font-size: 16px;
@@ -42,6 +44,13 @@
   letter-spacing: -0.02em;
   max-width: 289px;
   margin-right: auto;
+}
+
+@media screen and (max-width: 374px) {
+
+  .faq-item-title {
+    max-width: 254px;
+  }
 }
 
 .faq-btn {
