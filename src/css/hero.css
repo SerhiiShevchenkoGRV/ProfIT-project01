@@ -8,16 +8,39 @@
   margin-bottom: 64px;
 }
 
-.hero-cont {
-  min-width: 320px;
+.hero-container {
   padding: 0 16px;
 }
 
-@media screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx),
-  screen and (min-device-pixel-ratio: 2) {
+@media only screen and (max-width: 320px) {
+  .hero-section {
+    padding-top: 200px;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+
+  .hero-container {
+    padding: 0 16px;
+    min-width: auto;
+  }
+  .hero-title {
+    font-size: 14px;
+    max-width: 180px;
+    margin-bottom: 120px;
+  }
+
+  .hero-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 45px;
+    gap: 12px;
+  }
+}
+/* ------------------------------------ */
+@media only screen and (min-resolution: 2dppx) {
   .hero-section {
     background-image: url(../img/hero/hero-bg_mob@2x.jpg);
+    background-size: cover;
   }
 }
 
@@ -94,12 +117,16 @@
     background-image: url(../img/hero/hero-bg_tab@1x.jpg);
     padding-top: 300px;
   }
+  .hero-section {
+    background-size: cover;
+  }
 
   @media screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx),
     screen and (min-device-pixel-ratio: 2) {
     .hero-section {
       background-image: url(../img/hero/hero-bg_tab@2x.jpg);
+      background-size: cover;
     }
   }
   .hero-title {
@@ -108,6 +135,9 @@
     line-height: 1;
     letter-spacing: -0.03em;
     color: #fafafa;
+  }
+  .hero-section {
+    background-size: cover;
   }
 
   .hero-list {
@@ -133,7 +163,7 @@
 @media only screen and (min-width: 1440px) {
   .hero-section {
     background-image: url(../img/hero/hero-bg_desk@1x.jpg);
-
+    background-size: cover;
     padding-top: 300px 178px 243px;
     margin-bottom: 96px;
   }
@@ -148,8 +178,45 @@
     screen and (min-resolution: 2dppx),
     screen and (min-device-pixel-ratio: 2) {
     .hero-section {
-      background-size: contain;
       background-image: url(../img/hero/hero-bg_desk@2x.jpg);
+      background-size: cover;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .hero-section {
+      padding-top: 200px;
+      padding-bottom: 24px;
+      margin-bottom: 48px;
+    }
+
+    .hero-container {
+      padding: 0 12px;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      max-width: 280px;
+      margin-bottom: 160px;
+    }
+
+    .hero-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding-right: 0;
+    }
+
+    .hero-link {
+      width: 32px;
+      height: 32px;
+      font-size: 12px;
+    }
+
+    .hero-email {
+      width: 160px;
+      height: 32px;
+      font-size: 12px;
     }
   }
 }
