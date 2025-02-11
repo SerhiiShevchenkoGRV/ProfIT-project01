@@ -115,7 +115,7 @@ html {
   }
   .header-nav-item:hover,
   .header-nav-item:focus {
-    color: #e0373f;
+    color: #ed3b44;
   }
 
   .dropdown-content {
@@ -137,7 +137,6 @@ html {
 }
 
 .header-btn {
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: row;
