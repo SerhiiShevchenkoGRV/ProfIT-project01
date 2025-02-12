@@ -20,7 +20,7 @@ form.addEventListener('submit', async function (event) {
   event.preventDefault();
   const email = emailInput.value.trim();
   const comments = commentsInput.value.trim();
-  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   // Empty inputs validation
   if (!email || !comments) {
