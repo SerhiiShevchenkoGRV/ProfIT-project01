@@ -43,9 +43,7 @@
   width: 44px;
   height: 44px;
   gap: 4px;
-  border-radius: 12px;
-  background: url(<path-to-image>) lightgray -39.5px -8.999px / 301.752%
-    201.193% no-repeat;
+  background-color: #1c1d20;
 }
 
 .footer-text {

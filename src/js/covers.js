@@ -88,7 +88,7 @@ picturesLines.forEach(li => {
     .map(
       ({ src1x, src2x, alt }) =>
         `<img
-            srcset="${src1x}, ${src2x} 2x"
+            srcset="${src1x} 1x, ${src2x} 2x"
             src="${src1x}"
             alt="${alt}"
             class="covers-picture"
@@ -105,7 +105,7 @@ picturesLines.forEach(li => {
 //       ({ src1x, src2x, alt }) =>
 //         `<img
 //               srcset="
-//                 ${src1x},
+//                 ${src1x} 1x,
 //                 ${src2x} 2x
 //               "
 //               src=${src1x}
