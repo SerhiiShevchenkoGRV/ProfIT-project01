@@ -17,8 +17,8 @@
 }
 
 @media (min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
   .footer-container {
     background-image: url(../img/work-together/glass_effect_mobile_x2.png);
   }
@@ -44,7 +44,8 @@
   height: 44px;
   gap: 4px;
   border-radius: 12px;
-  background: url(<path-to-image>) lightgray -39.5px -8.999px / 301.752% 201.193% no-repeat;
+  background: url(<path-to-image>) lightgray -39.5px -8.999px / 301.752%
+    201.193% no-repeat;
 }
 
 .footer-text {
@@ -60,11 +61,12 @@
 
 .footer-text-together {
   position: absolute;
-  top: 100%;
+  top: 48px;
   left: 0;
 }
 
 .footer-inline-text {
+  height: ;
   white-space: nowrap;
 }
 
@@ -305,8 +307,8 @@
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .footer-container {
       background-image: url(../img/work-together/elements_tablet_x2.png);
     }
@@ -319,6 +321,7 @@
 
   .footer-head-container {
     margin-bottom: 64px;
+    gap: 20px;
   }
 
   .logo-pic {
@@ -330,6 +333,12 @@
   .footer-text {
     font-size: 64px;
     font-weight: 500;
+    line-height: 64px;
+  }
+
+  .footer-text-together {
+    top: 77px;
+    left: 0;
   }
 
   .footer-inline-text {
@@ -403,8 +412,8 @@
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .footer {
       background-image: url(../img/work-together/glass_effect_desktop_x2.png);
     }
