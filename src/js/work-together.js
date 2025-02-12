@@ -4,19 +4,40 @@ const modalOverlay = document.getElementById('modalOverlay');
 const closeBtn = document.querySelector('.modal-btn');
 
 const emailInput = document.getElementById('email');
+const commentsInput = document.getElementById('comments');
 const validationText = document.querySelector('.validation-text');
 const inputsContainer = document.querySelector('.form-inputs');
 
+function disableBodyScroll() {
+  document.body.classList.add('no-scroll');
+}
+
+function enableBodyScroll() {
+  document.body.classList.remove('no-scroll');
+}
+
 form.addEventListener('submit', async function (event) {
   event.preventDefault();
-  const email = document.getElementById('email').value;
-  const comments = document.getElementById('comments').value;
+  const email = emailInput.value.trim();
+  const comments = commentsInput.value.trim();
+
+  // add empty field validation
+  if (!email || !comments) {
+    validationText.textContent = 'Fields cannot be empty!';
+    validationText.classList.add('error');
+    emailInput.classList.add('error');
+    commentsInput.classList.add('error');
+    inputsContainer.classList.add('error');
+    return;
+  }
 
   if (emailInput.validity.valid) {
-    validationText.textContent = 'Succes!';
-    validationText.classList.add('succes');
-    emailInput.classList.add('succes');
-    inputsContainer.classList.add('succes');
+    validationText.classList.remove('error');
+    validationText.textContent = 'Success!';
+    validationText.classList.add('success');
+    emailInput.classList.add('success');
+    commentsInput.classList.add('success');
+    inputsContainer.classList.add('success');
 
     try {
       const response = await fetch(
@@ -32,6 +53,7 @@ form.addEventListener('submit', async function (event) {
         form.reset();
         modal.style.display = 'flex';
         modalOverlay.style.display = 'block';
+        disableBodyScroll(); 
       } else {
         alert('Error submitting form. Please check your input and try again.');
       }
@@ -49,11 +71,13 @@ form.addEventListener('submit', async function (event) {
 function closeModal() {
   modal.style.display = 'none';
   modalOverlay.style.display = 'none';
-
-  // validationText.textContent = 'Succes!';
-  validationText.classList.remove('succes');
-  emailInput.classList.remove('succes');
-  inputsContainer.classList.remove('succes');
+  enableBodyScroll();
+  
+  validationText.textContent = '';
+  validationText.classList.remove('success');
+  emailInput.classList.remove('success');
+  commentsInput.classList.remove('success');
+  inputsContainer.classList.remove('success');
 }
 
 closeBtn.addEventListener('click', closeModal);
@@ -70,13 +94,29 @@ document.addEventListener('keydown', function (event) {
 });
 
 emailInput.addEventListener('input', () => {
+  validationText.textContent = '';
   validationText.classList.remove('error');
   emailInput.classList.remove('error');
   inputsContainer.classList.remove('error');
 });
+
+commentsInput.addEventListener('input', () => {
+validationText.classList.remove('error');  
+validationText.textContent = ''; 
+commentsInput.classList.remove('error');
+inputsContainer.classList.remove('error');
+});
+
 
 emailInput.addEventListener('blur', () => {
   emailInput.classList.remove('error');
   inputsContainer.classList.remove('error');
   validationText.classList.remove('error');
 });
+
+commentsInput.addEventListener('blur', () => {
+  commentsInput.classList.remove('error');  
+  inputsContainer.classList.remove('error');
+  validationText.classList.remove('error');
+});
+
