@@ -351,7 +351,11 @@
 
   .footer-form-contact {
     flex-direction: row;
-    gap: 32px;
+    margin-bottom: 18px;
+  }
+
+  .footer-form-contact {
+    flex-direction: row;
   }
 
   .form-inputs {
