@@ -22,7 +22,7 @@ const swiperWrapper = document.querySelector(".swiper-wrapper-rev");
 const reviewsSection = document.querySelector(".reviews");
 const elementsField = document.querySelector(".swiper-rev");
 
-let swiper;
+let swiperReviews;
 let errorOccurred = false;
 
 addReview();
@@ -33,7 +33,7 @@ async function addReview() {
         const stringData = responseReview.data.map(el => createRewiew(el)).join("");
         swiperWrapper.innerHTML = stringData;
 
-        swiper = new Swiper('.swiper-rev', {
+        swiperReviews = new Swiper('.swiper-rev', {
             slidesPerView: 1,
             modules: [Navigation, Keyboard, Mousewheel],
             navigation: {
@@ -44,7 +44,8 @@ async function addReview() {
             speed: 500,
             keyboard: {
                 enabled: true,
-                onlyInViewport: true,
+                onlyInViewport: false,
+                pageUpDown: true,
             },
             mousewheel: {
                 invert: false,
@@ -65,7 +66,7 @@ async function addReview() {
             },
 
         });
-        updateNavigationButtons(swiper);
+        updateNavigationButtons(swiperReviews);
     } catch (error) {
         errorOccurred = true;
         observeReviewsSection();
@@ -73,19 +74,23 @@ async function addReview() {
     }
 }
 
-function updateNavigationButtons(swiper) {
+function updateNavigationButtons(swiperReviews) {
     const nextButton = document.querySelector('.reviews-button-next');
     const prevButton = document.querySelector('.reviews-button-prev');
 
-    if (swiper.isEnd) {
+
+    if (swiperReviews.isEnd) {
+        swiperReviews.params.loop = false;
         nextButton.setAttribute("disabled", "true");
         nextButton.classList.add('disabled');
     } else {
+        swiperReviews.params.loop = true;
         nextButton.removeAttribute("disabled");
         nextButton.classList.remove('disabled');
     }
 
-    if (swiper.isBeginning) {
+    if (swiperReviews.isBeginning) {
+        swiperReviews.params.loop = false;
         prevButton.setAttribute("disabled", "true");
         prevButton.classList.add('disabled');
     } else {
