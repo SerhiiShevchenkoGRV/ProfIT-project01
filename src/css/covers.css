@@ -5,6 +5,7 @@
 
 .covers-section > .container {
   padding: 0;
+  max-width: 407px;
 }
 
 .covers-cont {
@@ -19,6 +20,10 @@
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .covers-section > .container {
+    max-width: 832px;
+  }
+
   .covers-cont {
     background-image: url(../img/covers/background/background_bubbles_2x.webp);
   }
