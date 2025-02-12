@@ -64,7 +64,6 @@
 }
 
 .footer-inline-text {
-  height: ;
   white-space: nowrap;
 }
 
@@ -108,7 +107,7 @@
   text-overflow: ellipsis;
 }
 
-.footer-input.succes {
+.footer-input.success {
   border-color: #3cbc81;
 }
 
