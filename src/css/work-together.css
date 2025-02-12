@@ -146,7 +146,7 @@
   transform: translateY(48px);
 }
 
-.validation-text.succes {
+.validation-text.success {
   display: inline;
   color: #3cbc81;
 }
